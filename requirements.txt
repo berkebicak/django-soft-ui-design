@@ -1,0 +1,8 @@
+requests
+django
+gunicorn
+python-dotenv
+whitenoise
+django-theme-soft-design==1.0.10
+crispy-bootstrap4==2022.1
+django-crispy-forms==2.0

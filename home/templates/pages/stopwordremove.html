@@ -1,0 +1,43 @@
+{% extends 'layouts/base_sections.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block body %}
+
+{% if request.method != "POST" %}
+<div class="row">
+    <div method='post' class="col-md-6 offset-md-3">
+        <h1>Stop Word Remover</h1>
+        <form method='post'>
+            {% csrf_token %}
+            {{form|crispy}}
+            <br>
+            <button type='sumbit' class='btn btn-danger btn-lg'>Özetle</button>
+        </form>
+    </div>
+</div>
+<br>
+{% else %}
+{% comment %} <div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h1>----Metnin Özeti---</h1>
+        <textarea readonly>
+            {{predict}}
+        </textarea>
+    </div>
+</div> {% endcomment %}
+<div class="form-group">
+    <h1>Stop-Words ( Etkisiz Kelimeler ) Çıkarılmış Metin</h1>
+    <label for="exampleFormControlTextarea3"></label>
+    <textarea style='resize:none' readonly class="form-control" id="exampleFormControlTextarea3" rows="10">
+        Cümle : {{res}}
+
+        Sonuç : {{ predict|safe }}
+    </textarea>
+
+</div>
+
+{% endif %}
+
+
+{% endblock body %}
