@@ -3,6 +3,8 @@ import requests
 
 from .forms import GeneralForm
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 
@@ -13,6 +15,7 @@ def index(request):
     return render(request, 'pages/index.html')
 
 
+@ login_required(login_url='login')
 def summarize(request):
     form = GeneralForm(request.POST or None)
     context = {'form': form}
@@ -30,6 +33,7 @@ def summarize(request):
     return render(request, 'summarize.html', context)
 
 
+@ login_required(login_url='login')
 def stemmer(request):
     form = GeneralForm(request.POST or None)
     context = {'form': form}
@@ -47,6 +51,7 @@ def stemmer(request):
     return render(request, 'stemmer.html', context)
 
 
+@ login_required(login_url='login')
 def lemmatizer(request):
     form = GeneralForm(request.POST or None)
     context = {'form': form}
@@ -64,6 +69,7 @@ def lemmatizer(request):
     return render(request, 'lemmatizer.html', context)
 
 
+@ login_required(login_url='login')
 def stopwordremove(request):
     form = GeneralForm(request.POST or None)
     context = {'form': form}

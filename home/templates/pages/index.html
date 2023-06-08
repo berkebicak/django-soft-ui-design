@@ -17,6 +17,9 @@
             TÜRKÇE NLP
           </h1>
           <p class="lead text-white mt-3">Hoşgeldiniz </p>
+          <p class="lead text-white mt-3">Türkçe dili için geliştirilmiş 'Teknoloji' konu başlıklı metinlerinizi
+            özetlemek ve daha birçok aracı kullanmak için oluşturulmuş bu web sitemize hemen üye olup başlayın.
+          </p>
         </div>
       </div>
     </div>
@@ -45,60 +48,57 @@
     <div class="row">
       <div class="row text-center my-sm-5 mt-5">
         <div class="col-lg-6 mx-auto">
-          <h2 class="text-primary text-gradient mb-0">Boost creativity</h2>
-          <h2 class="">With our coded pages</h2>
-          <p class="lead">The easiest way to get started is to use one of our <br /> pre-built example pages. </p>
+          <h2 class="text-primary text-gradient mb-0">Türkçe NLP Araçları</h2>
+          <h2 class=""></h2>
+          <p class="lead">Çeşitli araçlarımızdan faydalanmak için şimdi<br /> <a href="{% url 'register' %}"
+              class="text-primary"> giriş yapın</a>.</p>
         </div>
       </div>
     </div>
     <div class="row justify-content-center"> <!-- Add 'justify-content-center' class here -->
       <div class="col-md-8">
         <div class="row mt-4">
-          <div class="col-md-6">
-            <a href="{% url 'about-us' %}">
+          <div class="col-md-6 text-center">
+            <a href="/summarize">
               <div class="card move-on-hover">
-                <img class="w-100"
-                  src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/presentation/section-pages/about-us.jpg"
-                  alt="">
+                <img src="{% static 'img/curved-images/curved-6.jpg' %}" alt="">
               </div>
               <div class="mt-2 ms-2">
-                <h6 class="mb-0">About Us Page</h6>
+                <h6 class="mb-0">Metin Özetleme</h6>
               </div>
             </a>
           </div>
-          <div class="col-md-6 mt-md-0 mt-5">
-            <a href="{% url 'contact-us' %}">
+          <div class="col-md-6 mt-md-0 mt-5 text-center">
+            <a href="/stemmer">
               <div class="card move-on-hover">
-                <img class="w-100"
-                  src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/presentation/section-pages/contact-us.jpg"
-                  alt="">
+                <img class="w-100" src="{% static 'img/curved-images/curved-8.jpg' %}" alt="">
               </div>
               <div class="mt-2 ms-2">
-                <h6 class="mb-0">Contact Us Page</h6>
+                <h6 class="mb-0">Kelime Normalleştirme</h6>
               </div>
             </a>
           </div>
-          <div class="col-md-6 mt-md-0 mt-6">
-            <a href="{% url 'login' %}">
+          <!-- Add a space here -->
+          <div class="col-12 mt-4"></div>
+          <div class="col-12 mt-4"></div>
+          <!-- Add a space here -->
+          <div class="col-md-6 mt-md-0 mt-6 text-center">
+            <a href="/lemmatizer">
               <div class="card move-on-hover">
-                <img class="w-100"
-                  src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/presentation/section-account/sign-in.jpg"
-                  alt="">
+                <img class="w-100" src="{% static 'img/curved-images/curved-11.jpg' %}" alt="">
               </div>
               <div class="mt-2 ms-2">
-                <h6 class="mb-0">Sign In Page</h6>
+                <h6 class="mb-">Kök Bulucu</h6>
               </div>
             </a>
           </div>
-          <div class="col-md-6 mt-md-0 mt-6">
-            <a href="{% url 'author' %}">
+          <div class="col-md-6 mt-md-0 mt-6 text-center">
+            <a href="/stopwordremove">
               <div class="card move-on-hover">
-                <img class="w-100"
-                  src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/presentation/section-pages/author.jpg"
-                  alt="">
+                <img class="w-100" src="{% static 'img/curved-images/curved-10.jpg' %}" alt="">
               </div>
               <div class="mt-2 ms-2">
-                <h6 class="mb-0">Author Page</h6>
+                <h6 class="mb-0">Stop-Words Temizleyici</h6>
               </div>
             </a>
           </div>
@@ -119,29 +119,24 @@
 <!-- -------   START PRE-FOOTER 2 - simple social line w/ title & 3 buttons    -------- -->
 <div class="pt-5">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-5 ms-auto">
-        <h4 class="mb-1">Thank you for your support!</h4>
-        <p class="lead mb-0">We deliver the best web products</p>
+    <div class="row justify-content-center"> <!-- Add 'justify-content-center' class here -->
+      <div class="col-lg-5 text-center">
+        <h4 class="mb-1">Github Adreslerimiz</h4>
+        <p class="lead mb-0">İlginiz için teşekkür ederiz</p>
       </div>
-      <div class="col-lg-5 me-lg-auto my-lg-auto text-lg-end mt-5">
-        <a href="https://twitter.com/intent/tweet?text=Check%20Soft%20UI%20Design%20System%20made%20by%20%40CreativeTim%20%23webdesign%20%23designsystem%20%23bootstrap5&url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fsoft-ui-design-system"
-          class="btn btn-info mb-0 me-2" target="_blank">
-          <i class="fab fa-twitter me-1"></i> Tweet
+    </div>
+    <div class="row justify-content-center"> <!-- Add 'justify-content-center' class here -->
+      <div class="col-lg-5 text-center mt-5">
+        <a href="https://github.com/berkebicak" class="btn btn-secondary mb-2 me-2" target="_blank">
+          <i class="fab fa-github me-1"></i> Berke Bıçak
         </a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/soft-ui-design-system?AFFILIATE=128200"
-          class="btn btn-primary mb-0 me-2" target="_blank">
-          <i class="fab fa-facebook-square me-1"></i> Share
-        </a>
-        <a href="https://www.pinterest.com/pin/create/button/?url=https://www.creative-tim.com/product/soft-ui-design-system?AFFILIATE=128200"
-          class="btn btn-dark mb-0 me-2" target="_blank">
-          <i class="fab fa-pinterest me-1"></i> Pin it
+        <a href="https://github.com/hasanalay" class="btn btn-secondary mb-2 me-2" target="_blank">
+          <i class="fab fa-github me-1"></i> Hasan Alay
         </a>
       </div>
     </div>
   </div>
 </div>
-
 
 
 
