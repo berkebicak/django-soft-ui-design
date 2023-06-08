@@ -45,6 +45,10 @@
 
 <section class="py-5">
   <div class="container">
+    {% if request.user.is_authenticated %}
+    <br>
+    <br>
+    {% else %}
     <div class="row">
       <div class="row text-center my-sm-5 mt-5">
         <div class="col-lg-6 mx-auto">
@@ -55,56 +59,59 @@
         </div>
       </div>
     </div>
-    <div class="row justify-content-center"> <!-- Add 'justify-content-center' class here -->
-      <div class="col-md-8">
-        <div class="row mt-4">
-          <div class="col-md-6 text-center">
-            <a href="/summarize">
-              <div class="card move-on-hover">
-                <img src="{% static 'img/curved-images/curved-6.jpg' %}" alt="">
-              </div>
-              <div class="mt-2 ms-2">
-                <h6 class="mb-0">Metin Özetleme</h6>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-6 mt-md-0 mt-5 text-center">
-            <a href="/stemmer">
-              <div class="card move-on-hover">
-                <img class="w-100" src="{% static 'img/curved-images/curved-8.jpg' %}" alt="">
-              </div>
-              <div class="mt-2 ms-2">
-                <h6 class="mb-0">Kelime Normalleştirme</h6>
-              </div>
-            </a>
-          </div>
-          <!-- Add a space here -->
-          <div class="col-12 mt-4"></div>
-          <div class="col-12 mt-4"></div>
-          <!-- Add a space here -->
-          <div class="col-md-6 mt-md-0 mt-6 text-center">
-            <a href="/lemmatizer">
-              <div class="card move-on-hover">
-                <img class="w-100" src="{% static 'img/curved-images/curved-11.jpg' %}" alt="">
-              </div>
-              <div class="mt-2 ms-2">
-                <h6 class="mb-">Kök Bulucu</h6>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-6 mt-md-0 mt-6 text-center">
-            <a href="/stopwordremove">
-              <div class="card move-on-hover">
-                <img class="w-100" src="{% static 'img/curved-images/curved-10.jpg' %}" alt="">
-              </div>
-              <div class="mt-2 ms-2">
-                <h6 class="mb-0">Stop-Words Temizleyici</h6>
-              </div>
-            </a>
-          </div>
+    {% endif %}
+  </div>
+
+  <div class="row justify-content-center"> <!-- Add 'justify-content-center' class here -->
+    <div class="col-md-8">
+      <div class="row mt-4">
+        <div class="col-md-6 text-center">
+          <a href="/summarize">
+            <div class="card move-on-hover">
+              <img src="{% static 'img/curved-images/curved-6.jpg' %}" alt="">
+            </div>
+            <div class="mt-2 ms-2">
+              <h4 class="mb-0">Metin Özetleme</h4>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 mt-md-0 mt-5 text-center">
+          <a href="/stemmer">
+            <div class="card move-on-hover">
+              <img class="w-100" src="{% static 'img/curved-images/curved-8.jpg' %}" alt="">
+            </div>
+            <div class="mt-2 ms-2">
+              <h4 class="mb-0">Kelime Normalleştirme</h4>
+            </div>
+          </a>
+        </div>
+        <!-- Add a space here -->
+        <div class="col-12 mt-4"></div>
+        <div class="col-12 mt-4"></div>
+        <!-- Add a space here -->
+        <div class="col-md-6 mt-md-0 mt-6 text-center">
+          <a href="/lemmatizer">
+            <div class="card move-on-hover">
+              <img class="w-100" src="{% static 'img/curved-images/curved-11.jpg' %}" alt="">
+            </div>
+            <div class="mt-2 ms-2">
+              <h4 class="mb-">Kök Bulucu</h4>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 mt-md-0 mt-6 text-center">
+          <a href="/stopwordremove">
+            <div class="card move-on-hover">
+              <img class="w-100" src="{% static 'img/curved-images/curved-10.jpg' %}" alt="">
+            </div>
+            <div class="mt-2 ms-2">
+              <h4 class="mb-0">Stop-Words Temizleyici</h4>
+            </div>
+          </a>
         </div>
       </div>
     </div>
+  </div>
   </div>
 </section>
 

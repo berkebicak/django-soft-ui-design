@@ -1,0 +1,79 @@
+{% extends 'layouts/base_sections.html' %}
+{% load static %}
+{% block title %} Material Kit 2 by Creative Tim {% endblock title %}
+
+{% block body %} class="index-page bg-gray-200" {% endblock body %}
+
+{% block content %}
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+    }
+
+    th,
+    td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: rgba(0, 0, 0, 0.5);
+
+    }
+</style>
+
+
+<header class="header-2">
+    <div class="page-header min-vh-75 relative"
+        style="background-image: url('{% static 'img/curved-images/curved.jpg' %}')">
+        <div style="color: white;" class="container">
+            <br>
+            <br>
+            <br>
+            <br>
+            <h1 style="color: white;">Sonuçlarım</h1>
+            {% if analysis_results %}
+
+            <table>
+                <thead style="background-color: rgba(255, 255, 255, 0.5);">
+                    <tr>
+                        <th>Metin</th>
+                        <th>Kullanılan Araç</th>
+                        <th>Sonuç</th>
+                        <th>Oluşturulma Tarihi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for result in analysis_results %}
+                    <tr>
+                        <td>{{ result.text }}</td>
+                        <td>{{ result.analysis_type }}</td>
+                        <td>{{ result.result }}</td>
+                        <td>{{ result.created_at }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <p>Kayıt Bulunamadı</p>
+            {% endif %}
+        </div>
+
+        <div class="position-absolute w-100 z-index-1 bottom-0" style="position: relative; bottom: 100px;">
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 40" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+
+            </svg>
+        </div>
+    </div>
+</header>
+
+{% endblock content %}

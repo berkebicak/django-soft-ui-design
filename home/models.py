@@ -1,6 +1,15 @@
 from django.db import models
 
 # Create your models here.
+from django.contrib.auth.models import User
+
+
+class TextAnalysisResult(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    text = models.TextField()
+    analysis_type = models.CharField(max_length=50)
+    result = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
 
 
 class Summarize(models.Model):

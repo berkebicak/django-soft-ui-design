@@ -1,0 +1,146 @@
+{% extends 'layouts/base_sections.html' %}
+{% load static %}
+
+{% block title %} Material Kit 2 by Creative Tim {% endblock title %}
+
+{% block body %} class="index-page bg-gray-200" {% endblock body %}
+
+{% block content %}
+
+<section class="py-5">
+    <div class="container">
+
+        {% if request.user.is_authenticated %}
+        <br>
+        <br>
+        {% else %}
+        <div class="row">
+            <div class="row text-center my-sm-5 mt-5">
+                <div class="col-lg-6 mx-auto">
+                    <h2 class="text-primary text-gradient mb-0">Türkçe NLP Araçları</h2>
+                    <h2 class=""></h2>
+                    <p class="lead">Çeşitli araçlarımızdan faydalanmak için şimdi<br /> <a href="{% url 'register' %}"
+                            class="text-primary"> giriş yapın</a>.</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    <div class="row justify-content-center"> <!-- Add 'justify-content-center' class here -->
+        <div class="col-md-8">
+            <div class="row mt-4">
+                <div class="col-md-6 text-center">
+                    <a href="/summarize">
+                        <div class="card move-on-hover">
+                            <img src="{% static 'img/curved-images/curved-6.jpg' %}" alt="">
+                        </div>
+                        <div class="mt-2 ms-2">
+                            <h4 class="mb-0">Metin Özetleme</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 mt-md-0 mt-5 text-center">
+                    <a href="/stemmer">
+                        <div class="card move-on-hover">
+                            <img class="w-100" src="{% static 'img/curved-images/curved-8.jpg' %}" alt="">
+                        </div>
+                        <div class="mt-2 ms-2">
+                            <h4 class="mb-0">Kelime Normalleştirme</h4>
+                        </div>
+                    </a>
+                </div>
+                <!-- Add a space here -->
+                <div class="col-12 mt-4"></div>
+                <div class="col-12 mt-4"></div>
+                <!-- Add a space here -->
+                <div class="col-md-6 mt-md-0 mt-6 text-center">
+                    <a href="/lemmatizer">
+                        <div class="card move-on-hover">
+                            <img class="w-100" src="{% static 'img/curved-images/curved-11.jpg' %}" alt="">
+                        </div>
+                        <div class="mt-2 ms-2">
+                            <h4 class="mb-">Kök Bulucu</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 mt-md-0 mt-6 text-center">
+                    <a href="/stopwordremove">
+                        <div class="card move-on-hover">
+                            <img class="w-100" src="{% static 'img/curved-images/curved-10.jpg' %}" alt="">
+                        </div>
+                        <div class="mt-2 ms-2">
+                            <h4 class="mb-0">Stop-Words Temizleyici</h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+
+
+
+<!-- END Section Content -->
+<br>
+<br>
+
+
+<!-- -------   START PRE-FOOTER 2 - simple social line w/ title & 3 buttons    -------- -->
+<div class="pt-5">
+    <div class="container">
+        <div class="row justify-content-center"> <!-- Add 'justify-content-center' class here -->
+            <div class="col-lg-5 text-center">
+                <h4 class="mb-1">Github Adreslerimiz</h4>
+                <p class="lead mb-0">İlginiz için teşekkür ederiz</p>
+            </div>
+        </div>
+        <div class="row justify-content-center"> <!-- Add 'justify-content-center' class here -->
+            <div class="col-lg-5 text-center mt-5">
+                <a href="https://github.com/berkebicak" class="btn btn-secondary mb-2 me-2" target="_blank">
+                    <i class="fab fa-github me-1"></i> Berke Bıçak
+                </a>
+                <a href="https://github.com/hasanalay" class="btn btn-secondary mb-2 me-2" target="_blank">
+                    <i class="fab fa-github me-1"></i> Hasan Alay
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}
+
+{% block javascripts %}
+
+<script type="text/javascript">
+
+    if (document.getElementById('state1')) {
+        const countUp = new CountUp('state1', document.getElementById("state1").getAttribute("countTo"));
+        if (!countUp.error) {
+            countUp.start();
+        } else {
+            console.error(countUp.error);
+        }
+    }
+    if (document.getElementById('state2')) {
+        const countUp1 = new CountUp('state2', document.getElementById("state2").getAttribute("countTo"));
+        if (!countUp1.error) {
+            countUp1.start();
+        } else {
+            console.error(countUp1.error);
+        }
+    }
+    if (document.getElementById('state3')) {
+        const countUp2 = new CountUp('state3', document.getElementById("state3").getAttribute("countTo"));
+        if (!countUp2.error) {
+            countUp2.start();
+        } else {
+            console.error(countUp2.error);
+        };
+    }
+</script>
+
+{% endblock javascripts %}
