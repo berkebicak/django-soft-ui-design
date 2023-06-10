@@ -145,3 +145,31 @@ def stopwordremove(request):
         except (requests.exceptions.RequestException, KeyError):
             context["error"] = "Unable to stop-word text. Please try again later."
     return render(request, 'stopwordremove.html', context)
+
+
+@ login_required(login_url='login')
+def textclass(request):
+    form = GeneralForm(request.POST or None)
+    context = {'form': form}
+
+    if form.is_valid():
+        text = form.cleaned_data.get('text')
+        try:
+            response = requests.post("http://127.0.0.1:51000/textclass",
+                                     json={"text": text, "token": config.TOKEN},
+                                     headers={"Authorization": f"Bearer {config.TOKEN}"})
+            response.raise_for_status()
+            analysis_result = response.json()
+            context["predict"] = analysis_result
+
+            # Save the analysis result to the database
+            TextAnalysisResult.objects.create(
+                user=request.user,
+                text=text,
+                analysis_type='Metin Sınıflandırma',
+                result=analysis_result
+            )
+
+        except (requests.exceptions.RequestException, KeyError):
+            context["error"] = "Unable to textclass text. Please try again later."
+    return render(request, 'textclass.html', context)

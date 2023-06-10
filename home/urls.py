@@ -10,4 +10,6 @@ urlpatterns = [
     path('stemmer/', views.stemmer, name='stemmer'),
     path('lemmatizer/', views.lemmatizer, name='lemmatizer'),
     path('stopwordremove/', views.stopwordremove, name='stopwordremove'),
+    path('textclass/', views.textclass, name='textclass'),
+
 ]

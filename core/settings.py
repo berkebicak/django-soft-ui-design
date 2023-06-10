@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     "home",
     'crispy_bootstrap4',
     'crispy_forms',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
